@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите курс доллара: ");
+        double course = scanner.nextDouble();
+        System.out.println("Текущий курс: " + course);
+        System.out.println("Введите количество рублей для конвертации: ");
+        double rub = scanner.nextDouble();
+        System.out.println("Количество рублей: " + rub);
+
+        double dollar = 0;
+        if (course > 0) {
+            dollar = rub / course;
+        } else {
+            System.out.println("Курс валюты отрицательный");
+            System.exit(1);
+        }
+        
+        dollar = Math.round(dollar * 100);
+        dollar = dollar / 100f;
+
+        System.out.println("Итого: " + dollar + " долларов");
+    }
+}
